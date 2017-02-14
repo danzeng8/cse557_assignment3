@@ -636,7 +636,7 @@ void drawColumnAtMouse(int index) {
       float currentMax = maxes[index];
       float currentMin = mins[index];
       
-      String currentMaxStr = Float.toString(currentMax);
+      String currentMaxStr = currentMax.toString();
       if(orientations[index] == 0) {
         text(currentMaxStr, (mouseX - 0.5*textWidth(currentMaxStr)), (0.8*topMargin));
       }
@@ -661,7 +661,7 @@ void drawColumnAtMouse(int index) {
       }
       fill(0.0);
       
-      String currentMinStr = Float.toString(currentMin);
+      String currentMinStr = currentMin.toString();
       if(orientations[index] == 0) {
         text(currentMinStr, (mouseX - 0.5*textWidth(currentMinStr)), (1.25*topMargin) + frameHeight);
       }
@@ -871,11 +871,11 @@ void draw() {
            if(orientations[i-1] == 1) {
              axisValue = (j / 5.0) * (currentMax - currentMin);
            }
-           text(Float.toString(axisValue), marginX + (i-1) * lineWidthIncrement - textWidth(Float.toString(axisValue)) - 6.0,currentYPos);
+           text(axisValue.toString(), marginX + (i-1) * lineWidthIncrement - textWidth(axisValue.toString()) - 6.0,currentYPos);
         }
       }
       
-      String currentMaxStr = Float.toString(currentMax);
+      String currentMaxStr = currentMaxtoString();
       if(orientations[i-1] == 0) {
         text(currentMaxStr, (marginX - 0.5*textWidth(currentMaxStr)) + (i-1) * lineWidthIncrement, (0.8*topMargin));
       }
@@ -906,7 +906,7 @@ void draw() {
       }
       fill(0.0);
       
-      String currentMinStr = Float.toString(currentMin);
+      String currentMinStr = currentMin.toString();
       if(orientations[i-1] == 0) {
         text(currentMinStr, (marginX - 0.5*textWidth(currentMinStr)) + (i-1) * lineWidthIncrement, (1.25*topMargin) + frameHeight);
       }
