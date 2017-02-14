@@ -341,7 +341,7 @@ void setup() {
   data = loadStrings(fileName);
   colNames = split(data[0], ",");
   dataLen = data.length - 1;
-  surface.setResizable(true);
+  //surface.setResizable(true);
   mins = new float[colNames.length - 1];
   for(int i = 0; i < colNames.length - 1; i++) {
     mins[i] =  Float.MAX_VALUE;
