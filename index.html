@@ -344,7 +344,7 @@ void setup() {
   //surface.setResizable(true);
   mins = new float[colNames.length - 1];
   for(int i = 0; i < colNames.length - 1; i++) {
-    mins[i] =  Float.MAX_VALUE;
+    mins[i] =  100000.0;
   }
   maxes = new float[colNames.length - 1];
   togglesHaveChanged = false;
@@ -361,7 +361,7 @@ void setup() {
   togglingBottom = new boolean[colNames.length-1];
   beingDragged = new boolean[colNames.length-1];
   for(int i = 0; i < colNames.length - 1; i++) {
-    maxes[i] =  Float.MIN_VALUE;
+    maxes[i] =  -100000.0;
     orientations[i] = 0;
     colorSelectionModes[i] = false;
     dimensionSelected[i] = false;
@@ -372,8 +372,8 @@ void setup() {
   for(int i = 1; i < data.length; i++) {
     String[] currentRow = split(data[i], ",");
      for(int j = 1; j < colNames.length; j++) {
-         mins[j-1] = min(Float.parseFloat(currentRow[j]),mins[j-1]); 
-         maxes[j-1] = max(Float.parseFloat(currentRow[j]),maxes[j-1]); 
+         mins[j-1] = min(new Float(currentRow[j]),mins[j-1]); 
+         maxes[j-1] = max(new Float(currentRow[j]),maxes[j-1]); 
      }
   }
   //Precompute positions on line
